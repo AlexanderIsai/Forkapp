@@ -1,0 +1,22 @@
+@import "reset";
+@import "veriables";
+@import "var";
+@import "mix_in";
+
+
+
+@import "section/forkapp";
+@import "section/header";
+@import "section/hero";
+@import "section/editor";
+@import "section/you-get";
+@import "section/people";
+@import "section/price";
+
+
+
+@import "media/media-forkapp";
+@import "media/media-people";
+@import "media/media 481 до 992";
+@import "media/media 993-1200";
+@import "media/media_more 1200";
