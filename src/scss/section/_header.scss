@@ -71,14 +71,14 @@
       &--item{
         position: relative;
       &::before{
-        display: none;
         opacity: 0;
         content: '';
         width: 8px;
         height: 53px;
         background-color: $lightViolet;
         position: absolute;
-        top: 19px;
+        top: 11px;
+        left: 0;
         transition: 0.5s opacity linear;
       }
     }
@@ -115,10 +115,10 @@
     display: none;
   }
   &:nth-child(2) {
-    transform: translate(1px, 4px) rotate(45deg);
+    transform: translate(1px, 7px) rotate(45deg);
   }
   &:last-child {
-    transform: translate(1px, -4px) rotate(134deg);
+    transform: translate(-1px, -7px) rotate(134deg);
   }
 }
 .nav_ul__opened {

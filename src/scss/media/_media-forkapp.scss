@@ -22,6 +22,7 @@
           left: 4%;
           z-index: 12;
           background-color: $darkGrey;
+
           &--link:hover{
             color: $lightViolet;
           }
@@ -30,7 +31,9 @@
             padding-top: 30px;
             padding-bottom: 21px;
             border-bottom: 2px solid $violet;
-
+            &:hover:before{
+              opacity: 1;
+            }
           }
         }
       }
@@ -40,10 +43,7 @@
     }
   }
 }
-.forkapp__header--nav__ul--item:hover:before{
-  display: block;
-  opacity: 1;
-}
+
 
 @media (min-width: 481px) and (max-width: 992px) {
   .forkapp__header {
