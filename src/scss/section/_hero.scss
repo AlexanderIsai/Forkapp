@@ -1,0 +1,53 @@
+.forkapp__hero {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &--content {
+    &__title {
+      text-align: center;
+      font-size: 48px;
+      color: $white;
+      font-weight: 700;
+      padding-bottom: 20px;
+    }
+    &__text {
+      text-align: center;
+      font-size: 18px;
+      line-height: 24px;
+      color: $lightViolet;
+      padding-bottom: 15px;
+    }
+    &__sub {
+      text-align: center;
+      font-size: 15px;
+      color: $middleGrey;
+      padding-bottom: 370px;
+    }
+  }
+  &--button{
+
+    transform: translateY(66%);
+    &__style{
+      outline: none;
+      padding: 13px 29px;
+      background-color: $lightViolet;
+      color: $white;
+      font-size: 18px;
+      font-weight: 700;
+      border-radius: 40px;
+      border: 2px solid transparent;
+      transition: 0.5s background-color, color, border linear;
+      &:hover{
+        color: $lightViolet;
+        background-color: $white;
+        border: 2px solid $lightViolet;
+      }
+    }
+    &__sub {
+      padding-top: 13px;
+      color: $middleGrey;
+      text-align: center;
+    }
+  }
+}

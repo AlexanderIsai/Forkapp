@@ -1,0 +1,60 @@
+.people {
+  padding-top: 18%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../img/photoeditorsdk-export.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &__title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 48px;
+    text-align: center;
+    color: $white;
+    font-family: Montserrat;
+    padding-bottom: 53px;
+  }
+
+  &__blocks {
+    display: grid;
+
+    &--item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &__text {
+        width: 84%;
+        padding-top: 33px;
+        padding-bottom: 45px;
+        color: $white;
+        font-size: 16px;
+        font-weight: 700;
+        font-style: italic;
+        text-align: center;
+        line-height: 24px;
+      }
+    }
+  }
+  &__sub{
+    position: relative;
+    font-family: lato;
+    line-height: 21px;
+    color: $lightViolet;
+    text-align: center;
+    width: 92%;
+    padding-bottom: 18px;
+    &:after{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: $lightViolet;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+}
