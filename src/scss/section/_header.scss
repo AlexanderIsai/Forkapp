@@ -12,6 +12,7 @@
       background-image: url("../img/Logo 1.png");
       width: 43px;
       height: 41px;
+      transition: 0.5s all linear;
       &:hover{
         background-image: url("../img/logo-hover 1.png");
       }

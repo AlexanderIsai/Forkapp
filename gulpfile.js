@@ -74,7 +74,7 @@ const watcher = () => {
     gulp.watch(path.src.scss, createStyle).on('change', browserSync.reload);
     gulp.watch(path.src.img, createImg).on('change', browserSync.reload);
     gulp.watch(path.src.html).on('change', browserSync.reload);
-    gulp.watch(path.src.js).on('change', browserSync.reload);
+    gulp.watch(path.src.js, createJs).on('change', browserSync.reload);
 }
 
 //task
