@@ -1,13 +1,15 @@
 const gulp = require('gulp');
+const rename = require("gulp-rename")
 const sass = require('gulp-sass');
 const browserSync = require('browser-sync').create();
 const clean = require('gulp-clean');
-const uglify = require('gulp-uglify');
+let uglify = require('gulp-uglify-es').default;
 const imagemin = require('gulp-imagemin');
 const autoprefixer = require('gulp-autoprefixer');
 const concat = require('gulp-concat');
 const cleanCSS = require('gulp-clean-css');
-const fileinclude = require('gulp-file-include');``
+const fileinclude = require('gulp-file-include');
+
 
 
 const path = {
@@ -16,7 +18,7 @@ const path = {
         scss: './src/scss/**/*.scss',
         html: 'index.html',
         js: './src/js/**/*.js',
-        css:'./**/*.css'
+        css: './**/*.css'
     },
     dist: {
         css: './dist/css',
@@ -33,6 +35,7 @@ const createStyle = () => {
         .pipe(concat('style.css'))
         .pipe(cleanCSS({compatibility: 'ie7'}))
         .pipe(autoprefixer())
+        .pipe(rename("style.min.css"))
         .pipe(gulp.dest(path.dist.css))
         .pipe(browserSync.stream())
 }
@@ -46,6 +49,8 @@ const createImg = () => {
 
 const createJs = () => {
     return gulp.src(path.src.js)
+        .pipe(rename("script.min.js"))
+        .pipe(uglify())
         .pipe(gulp.dest(path.dist.js))
         .pipe(browserSync.stream())
 }
@@ -55,7 +60,7 @@ const cleanDist = () => {
         .pipe(clean())
         .pipe(browserSync.stream())
 }
-const include = () =>{
+const include = () => {
     return gulp.src(path.src.html)
         .pipe(fileinclude({
             prefix: '@@',
@@ -64,6 +69,11 @@ const include = () =>{
         .pipe(gulp.dest(path.dist.root));
 }
 
+// const minJs = () => {
+//     gulp.src(path.src.js)
+//         .pipe(uglify())
+//         .pipe(gulp.dest(path.dist.js))
+//     }
 
 const watcher = () => {
     browserSync.init({
@@ -83,4 +93,3 @@ gulp.task('build', gulp.series(cleanDist, include, createJs, createStyle, create
 
 
 gulp.task('dev', watcher)
-
